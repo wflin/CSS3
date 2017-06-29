@@ -62,6 +62,27 @@
  1. (E:not(F))----匹配所有除元素F外的E元素
  
  
+ ### 四、伪元素
+ 
+ 1. ::first-letter
+ 2. ::first-line
+ 3. ::before和::after
+ 4. ::selection
+ 
+ ### 五、属性选择器
  
  
+ 1. (E[attr])----选择匹配具有属性attr的E元素。其中E可以省略，表示选择定义了attr属性的任意类型元素
+ 2. (E[attr=val])----选择匹配具有属性attr的E元素，并且attr的属性值为val(其中val区分大小写)，同样E元素省略时表示选择定义了attr属性值为val的任意类型元素
+ 3. (E[arrt|=val])----选择匹配E元素，且E元素定义了属性attr,attr属性值是一个具有val或者以val-开始的属性值。常用于lang属性（例如lang="en-us"）.例如p[lang=en]将匹配定义为英语的任何段落，无论是英式英语还是美式英语
+ 4. (E[attr~=val])----选择匹配E元素，且E元素定义了属性attr,attr属性值具有多个空格分隔的值，其中一个值等于val.例如.info[title~=more]将匹配元素具有类名info，而且这个元素设置了一个属性title,同时title属性值也包含了“more”的任何元素，例如<a class="info" title="click here for more infomation">click me </a>
+ 5. (E[attr*=val])----选择匹配元素E,且E元素定义了属性attr,其属性值任意位置包含了“val”。换句话说，字符串val与属性值中的任意位置相匹配
+ 6. (E[attr^=val])----选择匹配元素E,且E元素定义了属性attr,其属性值以val开头的任何字符串
+ 7. (E[attr$=val])----选择匹配元素E,且E元素定义了属性attr,其属性值以val结尾的任何字符串。刚好与E[attr^=val]相反
  
+ 
+ ### CSS3中的通配符
+ 
+ 1. (^)匹配起始符---span[class^=span]表示选择以类名以“span”开头的所有span元素
+ 2. ($)匹配终止符---a[href$=pdf]表示选择以“pdf”结尾的href属性的所有a元素
+ 3. (*)匹配任意字符串---a[title*=site]匹配a元素，而且a元素的title属性值中任意位置有“site”字符的字符串
